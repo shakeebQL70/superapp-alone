@@ -7,10 +7,10 @@ const path = require("path");
 module.exports = (_, argv) => {
   return {
     output: {
-      publicPath: 'https://superapp-alone.vercel.app/',
-      // filename: "[name].bundle.js",
+      publicPath: process.env.PUBLIC_PATH,
+      filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
-      clean: true,
+      // clean: true,
     },
     devtool: "eval",
     resolve: {

@@ -1,1 +1,11 @@
+import("AXIOS/axios");
+import("OPMS/routes");
+import("MDM/routes");
+import("EDXPERT/routes");
+import("UI/button");
+import("UI/table");
+import("UI/contentSkeleton");
+import("UI/input");
+import("UI/utils");
+import("UI/select");
 import("./App");
