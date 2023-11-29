@@ -8,7 +8,7 @@ module.exports = (_, argv) => {
   return {
     output: {
       publicPath: 'auto',
-      filename: "[name].bundle.js",
+      // filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
       // clean: true,
     },
