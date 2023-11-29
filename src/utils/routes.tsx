@@ -3,14 +3,14 @@ import OpmsRoutes from "OPMS/routes";
 // import MdmRoutes from "MDM/routes";
 // import EdRoutes from "EDXPERT/routes";
 import { TRoute } from "./types";
-import { createBrowserRouter, createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 const Home = lazy(() => import("../components/Home"));
 const Root = lazy(() => import("../components/Root"));
 const Login = lazy(() => import("../components/Login"));
 const NoRoute = lazy(() => import("../components/NoRoute"));
 
-export const UnAuthRoutes = createHashRouter([
+export const UnAuthRoutes = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
@@ -49,7 +49,7 @@ const opms: TRoute[] = OpmsRoutes?.map((route: TRoute) => ({
 
 export const allRoutes: TRoute[] = [...superApp, ...opms];
 
-const AuthRoutes = createHashRouter([
+const AuthRoutes = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
