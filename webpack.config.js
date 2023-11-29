@@ -7,12 +7,12 @@ const path = require("path");
 module.exports = (_, argv) => {
   return {
     output: {
-      publicPath: "auto",
+      publicPath: "/",
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
       // clean: true,
     },
-    devtool: "eval",
+    devtool: "source-map",
     resolve: {
       extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     },
