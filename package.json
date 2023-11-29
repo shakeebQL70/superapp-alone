@@ -2,7 +2,7 @@
   "name": "SuperApp",
   "version": "1.0.0",
   "scripts": {
-    "build": "rm -rf dist webpack --mode production",
+    "build": "webpack --mode production",
     "build:dev": "rm -rf dist && env-cmd -f .env.dev webpack --mode production",
     "build:package": "tsc && webpack build --mode development",
     "build:start": "env-cmd -f .env.dev cd dist && PORT=5000 npx serve",
