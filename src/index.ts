@@ -1,7 +1,7 @@
-import("AXIOS/axios");
+// import("AXIOS/axios");
 import("OPMS/routes");
-import("MDM/routes");
-import("EDXPERT/routes");
+// import("MDM/routes");
+// import("EDXPERT/routes");
 import("UI/button");
 import("UI/table");
 import("UI/contentSkeleton");

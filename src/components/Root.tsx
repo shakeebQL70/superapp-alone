@@ -188,25 +188,25 @@ const appMenuItems: IAppMenuItem[] = [
       },
     ],
   },
-  {
-    name: "MDM",
-    Icon: DevicesIcon,
-    items: [
-      {
-        name: "MDM 1",
-        link: "/mdm",
-      },
-      {
-        name: "MDM 2",
-        link: "/mdm",
-      },
-    ],
-  },
-  {
-    name: "EdXpert",
-    link: "/edxpert",
-    Icon: SchoolIcon,
-  },
+  // {
+  //   name: "MDM",
+  //   Icon: DevicesIcon,
+  //   items: [
+  //     {
+  //       name: "MDM 1",
+  //       link: "/mdm",
+  //     },
+  //     {
+  //       name: "MDM 2",
+  //       link: "/mdm",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "EdXpert",
+  //   link: "/edxpert",
+  //   Icon: SchoolIcon,
+  // },
 ];
 
 const drawerWidth = 250;

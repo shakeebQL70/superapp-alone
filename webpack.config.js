@@ -51,10 +51,10 @@ module.exports = (_, argv) => {
         name: "SuperApp",
         filename: "remoteEntry.js",
         remotes: {
-          AXIOS: `axios@${process.env.REMOTE_PATH_AXIOS}`,
+          // AXIOS: `axios@${process.env.REMOTE_PATH_AXIOS}`,
           OPMS: `opms@${process.env.REMOTE_PATH_OPMS}`,
-          MDM: `mdm@${process.env.REMOTE_PATH_MDM}`,
-          EDXPERT: `edexpert@${process.env.REMOTE_PATH_EDXPERT}`,
+          // MDM: `mdm@${process.env.REMOTE_PATH_MDM}`,
+          // EDXPERT: `edexpert@${process.env.REMOTE_PATH_EDXPERT}`,
           UI: `ui@${process.env.REMOTE_PATH_UI}`,
         },
         exposes: {
