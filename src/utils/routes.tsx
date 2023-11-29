@@ -10,7 +10,7 @@ const Root = lazy(() => import("../components/Root"));
 const Login = lazy(() => import("../components/Login"));
 const NoRoute = lazy(() => import("../components/NoRoute"));
 
-export const UnAuthRoutes = createBrowserRouter([
+export const UnAuthRoutes = createHashRouter([
   {
     path: "/login",
     element: <Login />,
