@@ -7,7 +7,7 @@ const path = require("path");
 module.exports = (_, argv) => {
   return {
     output: {
-      publicPath: 'auto',
+      publicPath: "auto",
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
       // clean: true,
@@ -75,6 +75,7 @@ module.exports = (_, argv) => {
       }),
       new HtmlWebPackPlugin({
         template: "./src/index.html",
+        publicPath: "/",
       }),
     ],
   };
