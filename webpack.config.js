@@ -6,6 +6,7 @@ const path = require("path");
 
 module.exports = (_, argv) => {
   return {
+    entry: "./src/index.ts",
     output: {
       publicPath: "auto",
       filename: "[name].bundle.js",
@@ -21,8 +22,11 @@ module.exports = (_, argv) => {
       port: 5000,
       historyApiFallback: true,
       allowedHosts: "all",
+      open: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
     },
-
     module: {
       rules: [
         {
@@ -47,6 +51,10 @@ module.exports = (_, argv) => {
     },
 
     plugins: [
+      new webpack.EnvironmentPlugin({ BUILD_DATE: buildDate }),
+      new webpack.DefinePlugin({
+        "process.env": JSON.stringify(process.env),
+      }),
       new ModuleFederationPlugin({
         name: "SuperApp",
         filename: "remoteEntry.js",
@@ -76,6 +84,7 @@ module.exports = (_, argv) => {
       new HtmlWebPackPlugin({
         template: "./src/index.html",
       }),
+      new ForkTsCheckerWebpackPlugin(),
     ],
   };
 };
