@@ -3,13 +3,9 @@ const webpack = require("webpack");
 const deps = require("./package.json").dependencies;
 const path = require("path");
 const { ModuleFederationPlugin } = webpack.container;
-// const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-
-const buildDate = new Date().toLocaleString();
 
 module.exports = (_, argv) => {
   return {
-    entry: "./src/index.ts",
     output: {
       publicPath: "auto",
       filename: "[name].bundle.js",
@@ -25,10 +21,6 @@ module.exports = (_, argv) => {
       port: 5000,
       historyApiFallback: true,
       allowedHosts: "all",
-      open: true,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
     },
     performance: {
       hints: false,
@@ -55,16 +47,15 @@ module.exports = (_, argv) => {
             loader: "babel-loader",
           },
         },
+        {
+          test: /\.js$/,
+          enforce: "pre",
+          use: ["source-map-loader"],
+        },
       ],
     },
 
     plugins: [
-      new webpack.EnvironmentPlugin({
-        BUILD_DATE: buildDate,
-      }),
-      new webpack.DefinePlugin({
-        "process.env": JSON.stringify(process.env),
-      }),
       new ModuleFederationPlugin({
         name: "SuperApp",
         filename: "remoteEntry.js",
@@ -95,7 +86,6 @@ module.exports = (_, argv) => {
       new HtmlWebPackPlugin({
         template: "./src/index.html",
       }),
-      // new ForkTsCheckerWebpackPlugin(),
     ],
   };
 };
