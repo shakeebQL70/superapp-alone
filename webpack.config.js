@@ -3,6 +3,10 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const webpack = require("webpack");
 const deps = require("./package.json").dependencies;
 const path = require("path");
+const { ModuleFederationPlugin } = webpack.container;
+// const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
+const buildDate = new Date().toLocaleString();
 
 module.exports = (_, argv) => {
   return {
@@ -51,7 +55,9 @@ module.exports = (_, argv) => {
     },
 
     plugins: [
-      new webpack.EnvironmentPlugin({ BUILD_DATE: buildDate }),
+      new webpack.EnvironmentPlugin({
+        BUILD_DATE: buildDate,
+      }),
       new webpack.DefinePlugin({
         "process.env": JSON.stringify(process.env),
       }),
@@ -84,7 +90,7 @@ module.exports = (_, argv) => {
       new HtmlWebPackPlugin({
         template: "./src/index.html",
       }),
-      new ForkTsCheckerWebpackPlugin(),
+      // new ForkTsCheckerWebpackPlugin(),
     ],
   };
 };
