@@ -30,6 +30,11 @@ module.exports = (_, argv) => {
         "Access-Control-Allow-Origin": "*",
       },
     },
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
+    },
     module: {
       rules: [
         {
@@ -69,6 +74,7 @@ module.exports = (_, argv) => {
           // MDM: `mdm@${process.env.REMOTE_PATH_MDM}`,
           // EDXPERT: `edexpert@${process.env.REMOTE_PATH_EDXPERT}`,
           UI: `ui@${process.env.REMOTE_PATH_UI}`,
+          SUPER: `SuperApp@${process.env.REMOTE_PATH_SUPER_APP}`,
         },
         exposes: {
           "./store": "./src/Store/store.tsx",

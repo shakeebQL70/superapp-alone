@@ -3,7 +3,7 @@ import { Box, Collapse, Divider, List, ListItem, ListItemButton, ListItemIcon, L
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAppBarStore } from '../Store/store';
+import { useAppBarStore } from 'SUPER/store';
 export interface IAppMenuItem {
     name: string;
     link?:string;

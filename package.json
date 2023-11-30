@@ -7,7 +7,7 @@
     "build:package": "tsc && webpack build --mode development",
     "build:start": "env-cmd -f .env.dev cd dist && PORT=5000 npx serve",
     "start": "webpack serve --mode production",
-    "start:dev": "env-cmd -f .env.dev webpack serve --mode production",
+    "start:dev": "env-cmd -f .env.dev webpack serve --mode production --live-reload --hot",
     "start:local": "env-cmd -f .env.local webpack serve --open --mode development --live-reload --hot",
     "start:development": "env-cmd -f .env.dev webpack serve --open --mode development --live-reload --hot",
     "preview": "lite-server -c configs/my-bs-config.json"

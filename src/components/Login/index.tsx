@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { FieldInput } from "UI/input";
 import { inputsType } from "UI/utils";
 import {CustomButton} from 'UI/button'
-import { useUserStore } from '../../Store/store'
+import { useUserStore } from 'SUPER/store'
 import './login.scss'
 
 const defaultValues = {
